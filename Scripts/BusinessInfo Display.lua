@@ -68,7 +68,7 @@ else
 	
 	config = {
 		General = {
-			displayKey = 161 -- RShift key: 161
+			displayKey = 163 -- RCtrl key: 163
 		}
 	}
 
