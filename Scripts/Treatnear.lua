@@ -1,7 +1,7 @@
 script_name("Treatnear")
 script_description("Uses /ti (/treatinjury) on the nearest player performing one of the injury animations in HZRP, on the press of a hotkey (configurable with /tnrkey).")
 script_authors("akacross", "Bear")
-script_version("1.0.0-beta-3")
+script_version("1.0.0")
 
 local maxDist = 2.5
 
@@ -92,7 +92,7 @@ function main()
 		return closestCandidate.id or -1
 	end
 
-	local function get_distance_to_player(playerId)
+	function get_distance_to_player(playerId)
 		local dist = -1
 		if sampIsPlayerConnected(playerId) then
 			local result, ped = sampGetCharHandleBySampPlayerId(playerId)
