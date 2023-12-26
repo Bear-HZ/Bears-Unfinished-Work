@@ -1,7 +1,7 @@
 script_name("3DText CMD Keybind")
 script_description("Submits a server command, read out of a nearby 3DText, using a hotkey configurable with /3dtkey.")
 script_author("Bear")
-script_version("0.3.0")
+script_version("0.3.1")
 
 local sampev = require "lib.samp.events"
 local inicfg = require "inicfg"
@@ -85,7 +85,7 @@ function main()
 	end)
 	
 	local function isEntryKeyPressed()
-		return (isKeyDown(entryKey) and not sampIsChatInputActive() and not sampIsDialogActive())
+		return (isKeyDown(config.General.key) and not sampIsChatInputActive() and not sampIsDialogActive())
 	end
 	
 	while true do
