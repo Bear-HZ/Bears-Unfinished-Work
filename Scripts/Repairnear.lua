@@ -1,7 +1,7 @@
 script_name("Repairnear")
 script_description("A HZRP mod that offers a repair to a nearby vehicle's occupant based on the seat number typed while a certain hotkey (configurable with /rnrkey) is held down.")
 script_authors("akacross", "Bear")
-script_version("0.2.1")
+script_version("0.2.2")
 
 require "lib.moonloader"
 require "lib.sampfuncs"
@@ -177,7 +177,7 @@ function main()
 				light = createObject(19296, 0, 0, -100)
 				marker = createObject(19605, 0, 0, -100)
 				attachObjectToCar(light, closestVehicle.handle, 0, 0, 0, 0, 0, 0)
-				attachObjectToCar(marker, closestVehicle.handle, 0, 0, 1, 0, 0, 0)
+				attachObjectToCar(marker, closestVehicle.handle, 0, 0, 1.5, 0, 0, 0)
 			end
 			
 			while isRepairKeyPressedOnFoot() do
