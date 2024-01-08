@@ -1,6 +1,6 @@
 script_name("Bear's Flight System")
 script_description("This multi-mod comprises of: (1) A vastly better-than-stock flight camera, and (2) an aircraft rotation locker that vastly reduces the amount of player key input required for aircraft articulation.")
-script_version("0.2.1")
+script_version("0.2.2")
 
 require "moonloader"
 local inicfg = require "inicfg"
@@ -288,7 +288,7 @@ function main()
 				------------------
 				
 				if isRotationTrackingReady then
-					if isCharSittingInAnyCar(PLAYER_PED) and getDriverOfCar(currentFlyingVehicle) == PLAYER_PED and not isSampChatOrDialogOpen() then
+					if isCharSittingInAnyCar(PLAYER_PED) and isCarEngineOn(currentFlyingVehicle) and getDriverOfCar(currentFlyingVehicle) == PLAYER_PED and not isSampChatOrDialogOpen() then
 						processOnKeyPress(cfg.RotationLockKeys, isKeyReleaseAwaited.rot.lockToggle, false, function() isRotationLockNeeded = not isRotationLockNeeded end)
 						processOnKeyPress(cfg.PitchToggleKeys, isKeyReleaseAwaited.rot.pitchToggle, true, function () cfg.RotationOptions.isPitchUnlocked = not cfg.RotationOptions.isPitchUnlocked end)
 						processOnKeyPress(cfg.RollToggleKeys, isKeyReleaseAwaited.rot.rollToggle, true, function () cfg.RotationOptions.isRollUnlocked = not cfg.RotationOptions.isRollUnlocked end)
